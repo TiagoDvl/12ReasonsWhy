@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">12 Reasons Why</string>
+
+    <string name="month_1">Month #1</string>
+    <string name="month_2">Month #2</string>
+    <string name="month_3">Month #3</string>
+    <string name="month_4">Month #4</string>
+    <string name="month_5">Month #5</string>
+    <string name="month_6">Month #6</string>
+    <string name="month_7">Month #7</string>
+    <string name="month_8">Month #8</string>
+    <string name="month_9">Month #9</string>
+    <string name="month_10">Month #10</string>
+    <string name="month_11">Month #11</string>
+    <string name="month_12">Month #12</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
