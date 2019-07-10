@@ -10,7 +10,7 @@ import java.util.*
 
 
 class Month1Fragment : BaseFragment() {
-    private val mNotificationTime = Calendar.getInstance().timeInMillis + 5000 //Set after 5 seconds from the current time.
+    private val mNotificationTime = Calendar.getInstance().timeInMillis + 15000 //Set after 5 seconds from the current time.
     private var mNotified = false
 
     override fun onCreateView(

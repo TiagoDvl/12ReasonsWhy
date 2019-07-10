@@ -2,8 +2,10 @@ package br.com.tiagodavila.twelvereasonswhy
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
 
 class MainActivity : AppCompatActivity(), BaseFragment.IMonthHolder {
 
@@ -45,7 +47,21 @@ class MainActivity : AppCompatActivity(), BaseFragment.IMonthHolder {
             .commit()
     }
 
+    private fun launchChosenMonth(fragment: BaseFragment, sharedElement: View) {
+        fragment.listener = this
+        supportFragmentManager
+            .beginTransaction()
+            .addSharedElement(sharedElement, ViewCompat.getTransitionName(sharedElement)!!)
+            .replace(R.id.app_main_container, fragment)
+            .addToBackStack(fragment::class.java.name)
+            .commit()
+    }
+
     override fun onMonthChosen(fragment: BaseFragment) {
         launchChosenMonth(fragment)
+    }
+
+    override fun onMonthChosen(fragment: BaseFragment, sharedElement: View) {
+        launchChosenMonth(fragment, sharedElement)
     }
 }
