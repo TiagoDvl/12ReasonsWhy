@@ -29,7 +29,7 @@ class Month2Fragment : BaseFragment() {
         number_of_visits.text = getString(R.string.number_of_visits, incrementAndGetNumberOfVisits())
         number_of_visits_reaction.text = getReactionAfterVisits(numberOfVisitsBeforeIncrement)
 
-        createAndPopulateAdapter()
+        createAndPopulateAdapter(view)
     }
 
     private fun incrementAndGetNumberOfVisits(): String {
@@ -51,15 +51,17 @@ class Month2Fragment : BaseFragment() {
         }
     }
 
-    private fun createAndPopulateAdapter() {
+    private fun createAndPopulateAdapter(view: View) {
         val adapter = Month2Adapter(
             mutableListOf(
-                R.drawable.ai_kanji,
-                R.drawable.family_lunch,
-                R.drawable.ic_launcher_background)
+                R.drawable.napoleao,
+                R.drawable.maxresdefault,
+                R.drawable.pastel_de_feijao,
+                R.drawable.teeth)
         )
         view_pager.adapter = adapter
         view_pager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+
     }
 
     private class Month2Adapter(private val myImages: MutableList<Int>): RecyclerView.Adapter<Month2Adapter.MonthHolder>() {
