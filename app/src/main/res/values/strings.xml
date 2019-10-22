@@ -28,5 +28,19 @@
     <string name="month_3_vibrator_toggle">Toggle Me ;)</string>
 
     <string name="month_4_celebrations">Parabéns, meu amor!\nObrigado por me aguentar!</string>
+
+    <string name="month_5_guess_1">O espaço entre o cu e a piroca?</string>
+    <string name="month_5_guess_2">O espaço entre o cu e a periquita?</string>
+    <string name="month_5_guess_3">Queria ficar em casa mas acabei \ncomprando uma…?</string>
+    <string name="month_5_guess_4">Amor, tira a … lá de fora?</string>
+    <string name="month_5_guess_5">Qual a cor da sua bala favorita?</string>
+    <string name="month_5_validate">Validate</string>
+    <string name="month_5_right_guess_1">Curoca</string>
+    <string name="month_5_right_guess_2">Curica</string>
+    <string name="month_5_right_guess_3">Peneira</string>
+    <string name="month_5_right_guess_4">Roupa</string>
+    <string name="month_5_right_guess_5">Amarela</string>
+
+
 </resources>
 
