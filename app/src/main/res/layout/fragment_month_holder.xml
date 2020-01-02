@@ -20,22 +20,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
-
-    <Button
-        android:id="@+id/month_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/month_3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/month_4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/month_2"
-        app:layout_constraintVertical_bias="0.208" />
+        app:layout_constraintVertical_bias="0.091" />
 
     <Button
         android:id="@+id/month_4"
@@ -52,7 +37,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/month_3"
         app:layout_constraintTop_toBottomOf="@+id/month_2"
-        app:layout_constraintVertical_bias="0.208" />
+        app:layout_constraintVertical_bias="0.016" />
 
     <Button
         android:id="@+id/month_2"
@@ -70,13 +55,13 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/month_1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintVertical_bias="0.091" />
 
     <Button
         android:id="@+id/month_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="84dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/ripple_pink"
@@ -84,19 +69,57 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/month_3"
-        app:layout_constraintVertical_bias="0.293" />
+        app:layout_constraintVertical_bias="0.008" />
 
     <Button
         android:id="@+id/month_6"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/circle_drawable_blue"
         android:text="@string/month_6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toEndOf="@+id/month_5"
         app:layout_constraintTop_toBottomOf="@+id/month_4" />
+
+    <Button
+        android:id="@+id/month_7"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/month_7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/month_5" />
+
+    <Button
+        android:id="@+id/month_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/month_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/month_4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/month_2"
+        app:layout_constraintVertical_bias="0.016" />
+
+    <Button
+        android:id="@+id/month_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="224dp"
+        android:text="@string/month_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/month_6"
+        app:layout_constraintVertical_bias="0.086" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
