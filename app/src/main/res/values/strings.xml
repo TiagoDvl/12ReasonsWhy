@@ -47,6 +47,8 @@
     <string name="month_7_glaucia">Gláucia</string>
     <string name="month_7_susy">Nós</string>
 
+    <string name="month_8_number">8</string>
+    <string name="month_8_days_counter">Estamos juntos há: \n%1$s dias.\n\nObrigado, amor!</string>
 
 </resources>
 

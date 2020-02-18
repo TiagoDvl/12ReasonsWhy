@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/month_8_bg"
+    tools:context=".Month8Fragment">
+
+    <TextView
+        android:id="@+id/eighth_month_rotation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/month_8_number"
+        android:textSize="150sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/single_tap_animation"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="144dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/eighth_month_rotation"
+        app:lottie_fileName="singletap.json"
+        app:lottie_loop="false" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eighth_month_rotation"
+        app:layout_constraintVertical_bias="0.25">
+
+        <TextView
+            android:id="@+id/first_turn_days_counter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            tools:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/second_turn_family"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ano_novo_familia"
+            tools:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/third_turn_good_morning"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/middle_finger"
+            tools:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/fourth_turn_twitter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/namorado_peidao"
+            tools:visibility="gone"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
