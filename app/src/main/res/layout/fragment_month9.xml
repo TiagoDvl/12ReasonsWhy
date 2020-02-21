@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Month9Fragment">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/month_9_prize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="month_9_trip,month_9_poem_holder,month_9_kiss_quantity" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/month_9_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-114dp" />
+
+    <ImageView
+        android:id="@+id/month_9_trip"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:rotation="-90"
+        android:src="@drawable/month_9_trip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.193" />
+
+    <TextView
+        android:id="@+id/month_9_kiss_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:text="@string/month_9_kiss_quantity"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/month_9_trip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/month_9_poem_holder"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/month_9_trip">
+
+        <TextView
+            android:id="@+id/month_9_poem"
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:scrollbars="vertical"
+            android:text="@string/month_9_poem" />
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

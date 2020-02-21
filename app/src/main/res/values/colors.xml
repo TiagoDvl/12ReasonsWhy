@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="month_4_button_color">#E2C67C</color>
+    <color name="applicationBlue">#4E97F5</color>
 </resources>

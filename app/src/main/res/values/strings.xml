@@ -50,5 +50,40 @@
     <string name="month_8_number">8</string>
     <string name="month_8_days_counter">Estamos juntos há: \n%1$s dias.\n\nObrigado, amor!</string>
 
+    <string-array name="month_9_sequence_items">
+        <item>Bacalhau a Brás</item>
+        <item>Rato</item>
+        <item>Passaro</item>
+        <item>Shingeki</item>
+        <item>Rolha</item>
+        <item>Rosa</item>
+        <item>Shokugeki</item>
+        <item>Tomates</item>
+        <item>Barata Tonta</item>
+        <item>Tinto Maduro</item>
+        <item>Bananeira</item>
+        <item>Fera</item>
+        <item>Brasileiro</item>
+        <item>Telhado</item>
+    </string-array>
+
+    <string name="month_9_kiss_quantity">Você merece: %s beijos!</string>
+    <string name="month_9_poem"><b>Ser ou não ser?</b>\n\
+        Eis a questão\n
+        Ás vezes tenho fome\n
+        Então chamo o mozão\n\n
+
+        O Tiago pede pão de frutos vermelhos todo dia\n
+        O José, sem muito pensar, o copia todavia\n\n
+
+        Às vezes o assunto é feminismo; pesado\n
+        Por pouco a briga é impedida pela pergunta de um café passado\n\n
+
+        Olhar o sorrisinho dele, diz ao meu coração que pare\n
+        No café, na cama, na gare\n\n
+
+        Sem mais me ausento, porque um simples graduando também tem trabalho\n
+        Se alguém não gostou deste poema, pode bem ir pó car*lho</string>
+
 </resources>
 
