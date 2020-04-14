@@ -40,4 +40,9 @@
         <item name="android:layout_columnWeight">1</item>
     </style>
 
+    <style name="Buttons">
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
 </resources>

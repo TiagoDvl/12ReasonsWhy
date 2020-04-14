@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/month_10_corona_vairus"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/coronavairus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/month_10_corona_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/month_10_corona_vairus">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:src="@drawable/brazil_flag" />
+
+            <TextView
+                android:id="@+id/month_10_brazil_confirmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Confirmed = 200" />
+
+            <TextView
+                android:id="@+id/month_10_brazil_deaths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Confirmed = 200" />
+
+            <TextView
+                android:id="@+id/month_10_brazil_recovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Confirmed = 200" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:src="@drawable/portugal_flag" />
+
+            <TextView
+                android:id="@+id/month_10_portugal_confirmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Confirmed = 200" />
+
+            <TextView
+                android:id="@+id/month_10_portugal_deaths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Confirmed = 200" />
+
+            <TextView
+                android:id="@+id/month_10_portugal_recovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Confirmed = 200" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/month_10_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Calcular!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/month_10_corona_holder" />
+
+    <TextView
+        android:id="@+id/month_10_infected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/month_10_calculate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
