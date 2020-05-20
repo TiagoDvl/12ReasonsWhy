@@ -85,5 +85,24 @@
         Sem mais me ausento, porque um simples graduando também tem trabalho\n
         Se alguém não gostou deste poema, pode bem ir pó car*lho</string>
 
+    <string name="month_11_animal_crossing_text">Oi José, \n
+    Me disseram que hoje você faz aniversário de 11 meses de namoro com o Tiago\n
+    é verdade?</string>
+
+    <string name="month_11_animal_task_deny">Ah! Ele deve ter contado errado, então.
+    \n\nEle é burro as vezes. Não liga. Até a próxima.</string>
+
+    <string name="month_11_animal_task">Ah! Deve ter sido difícil até agora.
+    \n\nSim, sim.
+    \nJunte esses materiais pra eu lhe dar seu prêmio.</string>
+
+    <string name="month_11_yes">Yes, yes!</string>
+    <string name="month_11_no">No :(</string>
+
+    <string name="month_11_choice_1">3 folhas de manjericão</string>
+    <string name="month_11_choice_2">1 capsula de café</string>
+    <string name="month_11_choice_3">1 frasco de tempero</string>
+    <string name="month_11_choice_4">3 beijinhos</string>
+
 </resources>
 

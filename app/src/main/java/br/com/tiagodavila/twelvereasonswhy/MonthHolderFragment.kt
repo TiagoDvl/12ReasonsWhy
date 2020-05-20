@@ -30,6 +30,7 @@ class MonthHolderFragment : BaseFragment(), View.OnClickListener {
         month_8.setOnClickListener(this)
         month_9.setOnClickListener(this)
         month_10.setOnClickListener(this)
+        month_11.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -44,6 +45,7 @@ class MonthHolderFragment : BaseFragment(), View.OnClickListener {
             R.id.month_8 -> Month8Fragment()
             R.id.month_9 -> Month9Fragment()
             R.id.month_10 -> Month10Fragment()
+            R.id.month_11 -> Month11Fragment()
             else -> Month1Fragment()
         })
     }
