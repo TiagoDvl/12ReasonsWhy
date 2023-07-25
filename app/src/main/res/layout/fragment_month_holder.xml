@@ -19,6 +19,26 @@
                 android:text="@string/month_1" />
 
             <Button
+                android:id="@+id/month_2"
+                style="@style/Buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_effect"
+                android:text="@string/month_2" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/month_3"
+                style="@style/Buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_effect"
+                android:text="@string/month_3"
+                android:transitionName="@string/month_3" />
+
+            <Button
                 android:id="@+id/month_4"
                 style="@style/Buttons"
                 android:layout_width="wrap_content"
@@ -30,24 +50,12 @@
         <TableRow>
 
             <Button
-                android:id="@+id/month_2"
-                style="@style/Buttons"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_effect"
-                android:text="@string/month_2"
-                android:transitionName="@string/month_2" />
-
-            <Button
                 android:id="@+id/month_5"
                 style="@style/Buttons"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_effect"
                 android:text="@string/month_5" />
-        </TableRow>
-
-        <TableRow>
 
             <Button
                 android:id="@+id/month_6"
@@ -56,6 +64,9 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_effect"
                 android:text="@string/month_6" />
+        </TableRow>
+
+        <TableRow>
 
             <Button
                 android:id="@+id/month_7"
@@ -64,17 +75,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_effect"
                 android:text="@string/month_7" />
-        </TableRow>
-
-        <TableRow>
-
-            <Button
-                android:id="@+id/month_3"
-                style="@style/Buttons"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_effect"
-                android:text="@string/month_3" />
 
             <Button
                 android:id="@+id/month_8"

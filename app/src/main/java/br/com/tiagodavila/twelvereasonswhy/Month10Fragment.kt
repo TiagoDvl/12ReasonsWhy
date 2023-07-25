@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
-import kotlinx.android.synthetic.main.fragment_month10.*
+import br.com.tiagodavila.twelvereasonswhy.databinding.FragmentMonth10Binding
 
 
 class Month10Fragment : BaseFragment() {
@@ -19,11 +19,16 @@ class Month10Fragment : BaseFragment() {
     private lateinit var brazilStats: Stats
     private lateinit var portugalStats: Stats
 
+    private var _binding: FragmentMonth10Binding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_month10, container, false)
+    ): View {
+        _binding = FragmentMonth10Binding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -32,20 +37,20 @@ class Month10Fragment : BaseFragment() {
         viewModel.callCoronaVirusApi("Brazil") { coronaResponse ->
             val stats = coronaResponse.data.covid19Stats[0]
             brazilStats = stats
-            month_10_brazil_confirmed.text = "Confirmados: ${stats.confirmed}"
-            month_10_brazil_deaths.text =  "Mortes: ${stats.deaths}"
-            month_10_brazil_recovered.text =  "Recuperados: ${stats.recovered}"
+            binding.month10BrazilConfirmed.text = "Confirmados: ${stats.confirmed}"
+            binding.month10BrazilDeaths.text =  "Mortes: ${stats.deaths}"
+            binding.month10BrazilRecovered.text =  "Recuperados: ${stats.recovered}"
         }
 
         viewModel.callCoronaVirusApi("Portugal") { coronaResponse ->
             val stats = coronaResponse.data.covid19Stats[0]
             portugalStats = stats
-            month_10_portugal_confirmed.text = "Confirmados: ${stats.confirmed}"
-            month_10_portugal_deaths.text = "Mortes: ${stats.deaths}"
-            month_10_portugal_recovered.text = "Recuperados: ${stats.recovered}"
+            binding.month10PortugalConfirmed.text = "Confirmados: ${stats.confirmed}"
+            binding.month10PortugalDeaths.text = "Mortes: ${stats.deaths}"
+            binding.month10PortugalRecovered.text = "Recuperados: ${stats.recovered}"
         }
 
-        month_10_calculate.setOnClickListener {
+        binding.month10Calculate.setOnClickListener {
             viewModel.callPoGoApi { response ->
                 val stringBuilder = StringBuilder("O pokemom: ")
                     .append(response[(brazilStats.confirmed/
@@ -54,9 +59,13 @@ class Month10Fragment : BaseFragment() {
                     .append(response[(portugalStats.confirmed/
                             (portugalStats.deaths + portugalStats.recovered)).toString()]?.name).append("!")
 
-                month_10_infected.text = stringBuilder
+                binding.month10Infected.text = stringBuilder
             }
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

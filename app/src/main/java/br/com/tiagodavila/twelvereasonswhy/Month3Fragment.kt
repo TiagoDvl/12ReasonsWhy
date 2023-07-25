@@ -11,7 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.recyclerview.widget.GridLayoutManager
-import kotlinx.android.synthetic.main.fragment_month3.*
+import br.com.tiagodavila.twelvereasonswhy.databinding.FragmentMonth2Binding
+import br.com.tiagodavila.twelvereasonswhy.databinding.FragmentMonth3Binding
 
 
 class Month3Fragment : BaseFragment(), SeekBar.OnSeekBarChangeListener {
@@ -22,19 +23,23 @@ class Month3Fragment : BaseFragment(), SeekBar.OnSeekBarChangeListener {
     val PAUSE_STRENGTH = 0
     var TIME_MULTIPLYER = 2L
 
+    private var _binding: FragmentMonth3Binding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_month3, container, false)
         vibrator = activity!!.getSystemService(VIBRATOR_SERVICE) as Vibrator?
+        _binding = FragmentMonth3Binding.inflate(inflater, container, false)
+        val view = binding.root
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        month_3_seek_bar.setOnSeekBarChangeListener(this)
-        month_3_seek_bar.progress = 1
-        month_3_vibrator_start.setOnClickListener { toggleVibrator() }
+        binding.month3SeekBar.setOnSeekBarChangeListener(this)
+        binding.month3SeekBar.progress = 1
+        binding.month3VibratorStart.setOnClickListener { toggleVibrator() }
         val gridLayoutManager = GridLayoutManager(this.context, 2)
         val travelMemories = arrayOf(
             TravelMemories("O que você é?", resources.getDrawable(R.drawable.o_que_voce_e), 40.971294, -6.508380),
@@ -47,7 +52,7 @@ class Month3Fragment : BaseFragment(), SeekBar.OnSeekBarChangeListener {
             TravelMemories("Não tenho tloco", resources.getDrawable(R.drawable.chines_correndo), 40.423797, -3.718102),
             TravelMemories("Aponta pro gordo!", resources.getDrawable(R.drawable.olha_o_gordo), 40.415462, -3.706425))
         val month3Adapter = Month3Adapter(travelMemories)
-        month_3_recycler.apply {
+        binding.month3Recycler.apply {
             layoutManager = gridLayoutManager
             hasFixedSize()
             adapter = month3Adapter
@@ -94,7 +99,7 @@ class Month3Fragment : BaseFragment(), SeekBar.OnSeekBarChangeListener {
     }
 
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-        month_3_vibrator_indicator.text = progress.toString()
+        binding.month3VibratorIndicator.text = progress.toString()
         TIME_MULTIPLYER = progress.toLong()
     }
 

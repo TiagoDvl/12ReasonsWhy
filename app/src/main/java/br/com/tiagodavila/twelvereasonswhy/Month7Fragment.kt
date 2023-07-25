@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.fragment_month7.*
+import br.com.tiagodavila.twelvereasonswhy.databinding.FragmentMonth7Binding
 
 
 class Month7Fragment : BaseFragment() {
@@ -18,23 +18,28 @@ class Month7Fragment : BaseFragment() {
     val susyToken = "susy"
     val nosToken = "nos"
 
+    private var _binding: FragmentMonth7Binding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_month7, container, false)
+        _binding = FragmentMonth7Binding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        month_7_glaucia.setOnClickListener {
+        binding.month7Glaucia.setOnClickListener {
             playRelativeMessage(glauciaToken)
         }
 
-        month_7_iris.setOnClickListener {
+        binding.month7Iris.setOnClickListener {
             playRelativeMessage(irisToken)
         }
 
-        month_7_susy.setOnClickListener {
+        binding.month7Susy.setOnClickListener {
             playRelativeMessage(nosToken)
         }
 
@@ -62,5 +67,8 @@ class Month7Fragment : BaseFragment() {
         super.onDestroy()
     }
 
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

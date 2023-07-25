@@ -3,14 +3,13 @@ package br.com.tiagodavila.twelvereasonswhy
 
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.fragment_month4.*
+import br.com.tiagodavila.twelvereasonswhy.databinding.FragmentMonth4Binding
 import swipeable.com.layoutmanager.OnItemSwiped
 import swipeable.com.layoutmanager.SwipeableLayoutManager
 import swipeable.com.layoutmanager.SwipeableTouchHelperCallback
@@ -23,12 +22,16 @@ class Month4Fragment : BaseFragment() {
     private lateinit var month4List: MutableList<TinderObject>
     private lateinit var rootView: View
 
+    private var _binding: FragmentMonth4Binding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        rootView = inflater.inflate(R.layout.fragment_month4, container, false)
-        return rootView
+        _binding = FragmentMonth4Binding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -53,8 +56,8 @@ class Month4Fragment : BaseFragment() {
                 tinderAdapter.removeTopItem()
                 if (tinderAdapter.tinderObjects.size == 0) {
                     showLikes(month4List)
-                    present_animation.visibility = View.VISIBLE
-                    present_animation.playAnimation()
+                    binding.presentAnimation.visibility = View.VISIBLE
+                    binding.presentAnimation.playAnimation()
                 }
             }
 
@@ -85,9 +88,9 @@ class Month4Fragment : BaseFragment() {
 
         })
         val itemTouchHelper = ItemTouchHelper(swipeTouchHelperCallback)
-        itemTouchHelper.attachToRecyclerView(month_4_tinder_cards)
-        month_4_tinder_cards.layoutManager = SwipeableLayoutManager()
-        month_4_tinder_cards.adapter = tinderAdapter
+        itemTouchHelper.attachToRecyclerView(binding.month4TinderCards)
+        binding.month4TinderCards.layoutManager = SwipeableLayoutManager()
+        binding.month4TinderCards.adapter = tinderAdapter
         super.onViewCreated(view, savedInstanceState)
     }
 
@@ -102,10 +105,14 @@ class Month4Fragment : BaseFragment() {
     }
 
     private fun showResponse(image: Int) {
-        month_4_swipe_response.setImageDrawable(context?.let { ContextCompat.getDrawable(it, image) })
-        month_4_swipe_response.visibility = View.VISIBLE
-        Handler().postDelayed({ month_4_swipe_response.visibility = View.GONE }, 500)
+        binding.month4SwipeResponse.setImageDrawable(context?.let { ContextCompat.getDrawable(it, image) })
+        binding.month4SwipeResponse.visibility = View.VISIBLE
+        Handler().postDelayed({ binding.month4SwipeResponse.visibility = View.GONE }, 500)
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 }

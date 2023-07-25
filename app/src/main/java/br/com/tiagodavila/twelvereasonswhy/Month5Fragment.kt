@@ -14,8 +14,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import br.com.tiagodavila.twelvereasonswhy.databinding.FragmentMonth5Binding
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_month5.*
 import kotlin.random.Random
 
 
@@ -23,17 +23,22 @@ class Month5Fragment : BaseFragment() {
 
     var validationCode = 0
 
+    private var _binding: FragmentMonth5Binding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_month5, container, false)
+        _binding = FragmentMonth5Binding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        month_5_validate_guesses.setOnClickListener {
+        binding.month5ValidateGuesses.setOnClickListener {
             checkAllGuesses().let {
-                month_5_validate_phrase.visibility = if (it) View.VISIBLE else View.GONE
+                binding.month5ValidatePhrase.visibility = if (it) View.VISIBLE else View.GONE
                 if (it) {
                     sendSMS("918528079", generateValidationCode())
                     Snackbar.make(view, "ARRETOU, BB!!!", Snackbar.LENGTH_LONG).show()
@@ -44,7 +49,7 @@ class Month5Fragment : BaseFragment() {
 
         }
 
-        month_5_validate_phrase.addTextChangedListener(object : TextWatcher {
+        binding.month5ValidatePhrase.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
 
             }
@@ -81,23 +86,25 @@ class Month5Fragment : BaseFragment() {
     }
 
     private fun checkAllGuesses(): Boolean {
-        val guess1 = month_5_guess_1.text.toString()
-        val guess2 = month_5_guess_2.text.toString()
-        val guess3 = month_5_guess_3.text.toString()
-        val guess4 = month_5_guess_4.text.toString()
-        val guess5 = month_5_guess_5.text.toString()
+        with(binding) {
+            val guess1 = month5Guess1.text.toString()
+            val guess2 = month5Guess2.text.toString()
+            val guess3 = month5Guess3.text.toString()
+            val guess4 = month5Guess4.text.toString()
+            val guess5 = month5Guess5.text.toString()
 
-        val rightGuess1 = resources.getString(R.string.month_5_right_guess_1)
-        val rightGuess2 = resources.getString(R.string.month_5_right_guess_2)
-        val rightGuess3 = resources.getString(R.string.month_5_right_guess_3)
-        val rightGuess4 = resources.getString(R.string.month_5_right_guess_4)
-        val rightGuess5 = resources.getString(R.string.month_5_right_guess_5)
+            val rightGuess1 = resources.getString(R.string.month_5_right_guess_1)
+            val rightGuess2 = resources.getString(R.string.month_5_right_guess_2)
+            val rightGuess3 = resources.getString(R.string.month_5_right_guess_3)
+            val rightGuess4 = resources.getString(R.string.month_5_right_guess_4)
+            val rightGuess5 = resources.getString(R.string.month_5_right_guess_5)
 
-        return guess1.equals(rightGuess1, true) and
-                guess2.equals(rightGuess2, true) and
-                guess3.equals(rightGuess3, true) and
-                guess4.equals(rightGuess4, true) and
-                guess5.equals(rightGuess5, true)
+            return guess1.equals(rightGuess1, true) and
+                    guess2.equals(rightGuess2, true) and
+                    guess3.equals(rightGuess3, true) and
+                    guess4.equals(rightGuess4, true) and
+                    guess5.equals(rightGuess5, true)
+        }
     }
 
     override fun onResume() {
@@ -123,6 +130,10 @@ class Month5Fragment : BaseFragment() {
         } catch (ex: Exception) {
             ex.printStackTrace()
         }
+    }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

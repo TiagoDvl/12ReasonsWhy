@@ -1,16 +1,14 @@
 package br.com.tiagodavila.twelvereasonswhy
 
-import android.graphics.drawable.Drawable
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import androidx.core.content.ContextCompat.startActivity
-import android.content.Intent
-import android.net.Uri
 import android.widget.ImageView
 import android.widget.TextView
-import kotlinx.android.synthetic.main.travel_memory_item.view.*
+import androidx.core.content.ContextCompat.startActivity
+import androidx.recyclerview.widget.RecyclerView
 
 
 class Month3Adapter(var listOfTravelMemories: Array<TravelMemories>) :
@@ -41,9 +39,8 @@ class Month3Adapter(var listOfTravelMemories: Array<TravelMemories>) :
     }
 
     inner class TravelMemoriesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val title: TextView = itemView.travel_memory_text
-        val image: ImageView = itemView.travel_memory_image
-        val clickHolder: ViewGroup = itemView.travel_memory_holder
-
+        val title: TextView = itemView.findViewById(R.id.travel_memory_text)
+        val image: ImageView = itemView.findViewById(R.id.travel_memory_image)
+        val clickHolder: ViewGroup = itemView.findViewById(R.id.travel_memory_holder)
     }
 }

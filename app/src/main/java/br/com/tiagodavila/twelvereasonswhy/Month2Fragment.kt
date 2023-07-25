@@ -8,12 +8,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import kotlinx.android.synthetic.main.fragment_month2.*
+import br.com.tiagodavila.twelvereasonswhy.databinding.FragmentMonth2Binding
 
 
 class Month2Fragment : BaseFragment() {
 
     private var numberOfVisitsBeforeIncrement: Int = 0
+
+    private var _binding: FragmentMonth2Binding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,13 +24,15 @@ class Month2Fragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         numberOfVisitsBeforeIncrement = getSharedPrefByKey(MONTH_2_NUMBER_OF_VISITS)
-        return inflater.inflate(R.layout.fragment_month2, container, false)
+        _binding = FragmentMonth2Binding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        number_of_visits.text = getString(R.string.number_of_visits, incrementAndGetNumberOfVisits())
-        number_of_visits_reaction.text = getReactionAfterVisits(numberOfVisitsBeforeIncrement)
+        binding.numberOfVisits.text = getString(R.string.number_of_visits, incrementAndGetNumberOfVisits())
+        binding.numberOfVisitsReaction.text = getReactionAfterVisits(numberOfVisitsBeforeIncrement)
 
         createAndPopulateAdapter(view)
     }
@@ -59,8 +64,8 @@ class Month2Fragment : BaseFragment() {
                 R.drawable.pastel_de_feijao,
                 R.drawable.teeth)
         )
-        view_pager.adapter = adapter
-        view_pager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        binding.viewPager.adapter = adapter
+        binding.viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
     }
 
@@ -87,5 +92,10 @@ class Month2Fragment : BaseFragment() {
             }
 
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

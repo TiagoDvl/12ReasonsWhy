@@ -11,43 +11,47 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
-import kotlinx.android.synthetic.main.fragment_month6.*
+import br.com.tiagodavila.twelvereasonswhy.databinding.FragmentMonth6Binding
 
 
 class Month6Fragment : BaseFragment() {
 
     private val rewardsSequence = mutableListOf<String>()
+    private var _binding: FragmentMonth6Binding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_month6, container, false)
+        _binding = FragmentMonth6Binding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        naval_battle_commands.addTextChangedListener(object : TextWatcher {
+        binding.navalBattleCommands.addTextChangedListener(object : TextWatcher {
 
             private val navalItems = arrayOf<View>(
-                naval_item_1,
-                naval_item_2,
-                naval_item_3,
-                naval_item_4,
+                binding.navalItem1,
+                binding.navalItem2,
+                binding.navalItem3,
+                binding.navalItem4,
 
-                naval_item_5,
-                naval_item_6,
-                naval_item_7,
-                naval_item_8,
+                binding.navalItem5,
+                binding.navalItem6,
+                binding.navalItem7,
+                binding.navalItem8,
 
-                naval_item_9,
-                naval_item_10,
-                naval_item_11,
-                naval_item_12,
+                binding.navalItem9,
+                binding.navalItem10,
+                binding.navalItem11,
+                binding.navalItem12,
 
-                naval_item_13,
-                naval_item_14,
-                naval_item_15,
-                naval_item_16
+                binding.navalItem13,
+                binding.navalItem14,
+                binding.navalItem15,
+                binding.navalItem16
             )
 
             override fun afterTextChanged(p0: Editable?) {
@@ -157,7 +161,7 @@ class Month6Fragment : BaseFragment() {
                 "4" -> navalItems[15].visibility = View.INVISIBLE
             }
 
-            else -> naval_item_1.visibility = View.INVISIBLE
+            else -> binding.navalItem1.visibility = View.INVISIBLE
         }
 
         if (!isSomeNavalItemVisible(navalItems)) {
@@ -187,4 +191,8 @@ class Month6Fragment : BaseFragment() {
         return areAllNavalItemsGone
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

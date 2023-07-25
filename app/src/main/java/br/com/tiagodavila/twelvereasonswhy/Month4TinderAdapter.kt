@@ -3,11 +3,9 @@ package br.com.tiagodavila.twelvereasonswhy
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import android.widget.ImageView
 import android.widget.TextView
-import kotlinx.android.synthetic.main.tinder_object_item.view.*
-import kotlinx.android.synthetic.main.travel_memory_item.view.*
+import androidx.recyclerview.widget.RecyclerView
 
 
 class Month4TinderAdapter(var tinderObjects: MutableList<TinderObject>) :
@@ -35,7 +33,7 @@ class Month4TinderAdapter(var tinderObjects: MutableList<TinderObject>) :
     }
 
     inner class TinderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val image: ImageView = itemView.tinder_image
-        val name: TextView = itemView.tinder_text
+        val image: ImageView = itemView.findViewById(R.id.tinder_image)
+        val name: TextView = itemView.findViewById(R.id.tinder_text)
     }
 }

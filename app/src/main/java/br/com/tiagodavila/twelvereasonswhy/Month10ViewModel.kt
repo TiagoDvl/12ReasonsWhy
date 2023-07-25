@@ -6,10 +6,12 @@ import com.google.gson.internal.LinkedTreeMap
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
+import retrofit2.CallAdapter
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.reflect.Type
 
 class Month10ViewModel : ViewModel() {
 
@@ -17,7 +19,7 @@ class Month10ViewModel : ViewModel() {
     fun callCoronaVirusApi(country: String, callBack: (coronaResponse: CoronaResponse) -> Unit) {
         getEndpointService().getCoronaStatusInCountry(country).enqueue(object : Callback<CoronaResponse>{
             override fun onFailure(call: Call<CoronaResponse>, t: Throwable) {
-                Log.d("onFailure", t.message)
+                Log.d("onFailure", t.message.toString())
             }
 
             override fun onResponse(call: Call<CoronaResponse>, response: Response<CoronaResponse>) {
@@ -30,7 +32,7 @@ class Month10ViewModel : ViewModel() {
     fun callPoGoApi(callBack: (LinkedTreeMap<String, Pokemon>) -> Unit) {
         getPoGoEndpointService().getReleasedPokemon().enqueue(object : Callback<LinkedTreeMap<String, Pokemon>>{
             override fun onFailure(call: Call<LinkedTreeMap<String, Pokemon>>, t: Throwable) {
-                Log.d("onFailure", t.message)
+                Log.d("onFailure", t.message.toString())
             }
 
             override fun onResponse(call: Call<LinkedTreeMap<String, Pokemon>>, response: Response<LinkedTreeMap<String, Pokemon>>) {
